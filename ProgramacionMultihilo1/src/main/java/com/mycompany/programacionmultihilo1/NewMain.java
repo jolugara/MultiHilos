@@ -31,6 +31,7 @@ public class NewMain {
          }
          }
          System.out.println("Hilo principal finalizado");
+         
     }
 
     public static class Hilo extends Thread {
