@@ -9,7 +9,7 @@ package com.mycompany.programacionmultihilo1;
  *
  * @author alumno
  */
-public class NewMain {
+public class Actividad1 {
 
     /**
      * @param args the command line arguments
@@ -19,19 +19,10 @@ public class NewMain {
          System.out.println("Iniciando hilo principal;");
 
          Hilo mh=new Hilo("");
+         Hilo2 mh2=new Hilo2("");
 
          mh.start();
-
-         for (int i=0;i<50;i++){
-             System.out.print("");
-         try {
-             Thread.sleep((long)(Math.random() * 5000));
-         }catch (InterruptedException exc) {
-             System.out.println("Hilo principal interrumpido");
-         }
-         }
-         System.out.println("Hilo principal finalizado");
-         
+         mh2.start();  
     }
 
     public static class Hilo extends Thread {
@@ -43,13 +34,30 @@ public class NewMain {
     try {
         for (int cont=1;cont<11;cont++){
             Thread.sleep((long)(Math.random() * 5000));
-            System.out.println("Hilo" +cont);
+            System.out.println("+Hilo" +cont);
         }
     }catch (InterruptedException exc){
-        System.out.println("interrumpido.");
+        System.out.println("Hilo1 interrumpido.");
     }
-        System.out.println("finalizando.");
+        System.out.println("Hilo1 finalizando.");
     }
   }
     
+     public static class Hilo2 extends Thread {
+    Hilo2(String nombre){
+        super(nombre);
+    }
+
+    public void run(){
+    try {
+        for (int cont=1;cont<11;cont++){
+            Thread.sleep((long)(Math.random() * 5000));
+            System.out.println("-Hilo" +cont);
+        }
+    }catch (InterruptedException exc){
+        System.out.println("Hilo2 interrumpido.");
+    }
+        System.out.println("Hilo2 finalizando.");
+    }
+  }   
 }
