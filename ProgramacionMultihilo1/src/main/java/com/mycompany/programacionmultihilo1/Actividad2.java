@@ -21,8 +21,8 @@ public class Actividad2 {
          Hilo mh=new Hilo("");
          Hilo2 mh2=new Hilo2("");
 
-         mh.start();
-         mh2.start();  
+         mh.run();
+         mh2.run();  
     }
 
     public static class Hilo extends Thread {
@@ -32,8 +32,8 @@ public class Actividad2 {
 
     public void run(){
     try {
-        for (int cont=1;cont<21;cont++){
-            Thread.sleep((long)(Math.random() * 3000));
+        for (int cont=1;cont<10;cont++){
+            Thread.sleep((long)(Math.random() * 1000));
             System.out.println("+Hilo" +cont);
         }
     }catch (InterruptedException exc){
@@ -50,8 +50,8 @@ public class Actividad2 {
 
     public void run(){
     try {
-        for (int cont=1;cont<31;cont++){
-            Thread.sleep((long)(Math.random() * 2000));
+        for (int cont=10;cont<21;cont++){
+            Thread.sleep((long)(Math.random() * 1000));
             System.out.println("-Hilo" +cont);
         }
     }catch (InterruptedException exc){

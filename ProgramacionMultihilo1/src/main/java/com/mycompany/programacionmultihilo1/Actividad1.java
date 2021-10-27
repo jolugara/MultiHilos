@@ -59,5 +59,6 @@ public class Actividad1 {
     }
         System.out.println("Hilo2 finalizando.");
     }
+    
   }   
 }
